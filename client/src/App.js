@@ -1,11 +1,8 @@
 // import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Search from "./components/Search";
-
-import Home from "./components/Home";
-import Random from "./components/Random";
-import Navbar from "./components/Navbar";
+import "./App.css";
+import Feed from "./components/Feed";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   return (
@@ -16,10 +13,9 @@ const App = () => {
     //     <Route exact path="/random" component={Random} />
     //   </Switch>
     // </Router>
-    <div>
-      {/* <Navbar />
-      <Home /> */}
-      <Search />
+    <div className="app">
+      <Sidebar />
+      <Feed />
     </div>
   );
 };

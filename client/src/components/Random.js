@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
-const Random = () => {
-  return <div></div>;
-};
+// const Random = () => {
+//   return <div></div>;
+// };
 
-export default Random;
+// export default Random;
