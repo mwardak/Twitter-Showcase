@@ -7,11 +7,11 @@ import Sidebar from "./components/Sidebar";
 const App = () => {
   return (
     // <Router>
-    //   <Switch>
+    //   <Routes>
     //     <Route exact path="/" component={Home} />
     //     <Route exact path="/search" component={Search} />
     //     <Route exact path="/random" component={Random} />
-    //   </Switch>
+    //   </Routes>
     // </Router>
     <div className="app">
       <Sidebar />
