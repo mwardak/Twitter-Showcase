@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
-import Post from "./Post";
+import Tweets from "./Tweets";
 import "./Feed.css";
 
-function Feed() {
-  const [posts, setPosts] = useState([]);
-
+const Feed = () => {
   return (
     <div className="feed">
       <div className="feed__header">
         <Search />
       </div>
-      <Post />
-      <Post />
-      <Post />
+      <Tweets />
+      <Tweets />
+      <Tweets />
     </div>
   );
-}
+};
 
 export default Feed;

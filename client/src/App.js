@@ -1,8 +1,10 @@
 // import "./App.css";
+import Favorite from "@mui/icons-material/Favorite";
 import React from "react";
 import "./App.css";
 import Feed from "./components/Feed";
 import Sidebar from "./components/Sidebar";
+import Favourite from "./components/Favourite";
 
 const App = () => {
   return (
@@ -16,6 +18,7 @@ const App = () => {
     <div className="app">
       <Sidebar />
       <Feed />
+      {/* <Favourite /> */}
     </div>
   );
 };

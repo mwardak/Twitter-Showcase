@@ -1,0 +1,30 @@
+.favourite {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  justify-content: space-between;
+}
+
+.favourite__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  cursor: pointer;
+}
+
+/* .avatar {
+  margin-top: 20px;
+} */
+
+/* @media screen and (max-width: 640px) {
+  .favourite {
+    width: 100%;
+  }
+  .favourite__card {
+    flex-direction: column;
+    width: 100%;
+  }
+} */
