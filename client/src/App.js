@@ -17,8 +17,8 @@ const App = () => {
     // </Router>
     <div className="app">
       <Sidebar />
-      <Feed />
-      {/* <Favourite /> */}
+      {/* <Feed /> */}
+      <Favourite />
     </div>
   );
 };

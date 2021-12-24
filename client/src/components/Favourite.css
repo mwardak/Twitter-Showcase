@@ -14,17 +14,18 @@
   width: 180px;
   cursor: pointer;
 }
-
-/* .avatar {
-  margin-top: 20px;
-} */
-
-/* @media screen and (max-width: 640px) {
-  .favourite {
-    width: 100%;
-  }
-  .favourite__card {
-    flex-direction: column;
-    width: 100%;
-  }
-} */
+.favourite__button {
+  /* display: flex; */
+  /* justify-content: center; */
+  behavior: smooth;
+  margin-left: 5px;
+  font-size: medium;
+  border: none;
+  box-shadow: 1px 1px 2px 1.5px #000000;
+  background-color: rgb(190, 205, 203);
+  border-radius: 15px;
+  align-items: center;
+  width: 65px;
+  height: 50px;
+  cursor: pointer;
+}
