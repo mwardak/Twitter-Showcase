@@ -1,12 +1,25 @@
 const express = require("express");
 const path = require("path");
-// require("dotenv").config();
+require("dotenv").config();
+
 const app = express();
 const axios = require("axios");
 
-//recieve the search query from the client
-app.get("/api/search/all", (req, res) => {
-  res.send("hello");
+app.get("/api/search/all", async (req, res) => {
+  const { search } = req.query;
+  console.log(search);
+  try {
+    const accessToken = process.env.ACCESS_TOKEN;
+    console.log(accessToken);
+
+    const url = `https://api.twitter.com/2/tweets/search/recent?query=${search}&tweet.fields=public_metrics&expansions=author_id&user.fields=description`;
+    const response = await axios.get(url, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+    res.json(response.data);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.get("/api/search/favourite", (req, res) => {

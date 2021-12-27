@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Feed.css";
+import "./Home.css";
 import "./Favourite.css";
 import Tweets from "./Tweets.js";
 import SportsHockey from "@mui/icons-material/SportsHockey";
@@ -20,8 +20,8 @@ const Favourite = () => {
     padding: "0px",
   };
   return (
-    <div className="feed">
-      <div className="feed__header">
+    <div className="home">
+      <div className="home__header">
         <div className="favourite">
           <div className="favourite__card">
             <SportsHockey style={iconStyle} color="primary" />

@@ -10,7 +10,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <TwitterIcon className="sidebar__twitterIcon" />
       <SidebarOption Icon={HomeIcon} text="Home" />
-      <SidebarOption Icon={FavoriteIcon} text="Favorite Tweets" />
+      <SidebarOption Icon={FavoriteIcon} text="Favourite Tweets" />
     </div>
   );
 };

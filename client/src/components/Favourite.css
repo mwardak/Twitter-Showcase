@@ -17,7 +17,7 @@
 .favourite__button {
   /* display: flex; */
   /* justify-content: center; */
-  behavior: smooth;
+
   margin-left: 5px;
   font-size: medium;
   border: none;

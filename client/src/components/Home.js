@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import Tweets from "./Tweets";
-import "./Feed.css";
+import "./Home.css";
 
-const Feed = () => {
+const Home = () => {
   return (
-    <div className="feed">
-      <div className="feed__header">
+    <div className="home">
+      <div className="home__header">
         <Search />
       </div>
       <Tweets />
@@ -16,4 +16,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Home;

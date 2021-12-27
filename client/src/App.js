@@ -1,24 +1,37 @@
-// import "./App.css";
-import Favorite from "@mui/icons-material/Favorite";
 import React from "react";
 import "./App.css";
-import Feed from "./components/Feed";
+import Home from "./components/Home";
 import Sidebar from "./components/Sidebar";
 import Favourite from "./components/Favourite";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route exact path="/" component={Home} />
-    //     <Route exact path="/search" component={Search} />
-    //     <Route exact path="/random" component={Random} />
-    //   </Routes>
-    // </Router>
     <div className="app">
-      <Sidebar />
-      {/* <Feed /> */}
-      <Favourite />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            component={Home}
+            element={
+              <>
+                <Sidebar />
+                <Home />
+              </>
+            }
+          />
+          <Route
+            path="/favourite"
+            component={Favourite}
+            element={
+              <>
+                <Sidebar />
+                <Favourite />
+              </>
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 };

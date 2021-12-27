@@ -4,27 +4,44 @@ import "./Search.css";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Search = () => {
-  //create route to test response from server
-  const searchTweets = async () => {
-    const response = await axios.get("/api/search/all");
-    console.log(response);
+  //use search term from the input field to search twitter
+  const [searchTerm, setSearchTerm] = useState("");
+  const [tweets, setTweets] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  //handle the search term from the input field
+  const handleSearchTerm = (e) => {
+    setSearchTerm(e.target.value);
   };
 
-  const searchFavourite = async () => {
-    const response = await axios.get("/api/search/favourite");
-    console.log(response);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const searchResponse = await axios.get(
+      `/api/search/all?search=${searchTerm}`
+    );
+
+    setTweets(searchResponse.data);
+    setIsLoading(false);
+
+    setSearchTerm("");
   };
 
-  useEffect(() => {
-    searchTweets();
-    searchFavourite();
-  }, []);
+  // useEffect(() => {
+  //   console.log(searchTerm);
+  // }, [searchTerm]);
 
   return (
     <div className="search">
-      <form className="search__input">
+      <form onSubmit={handleSubmit} className="search__input">
         <SearchIcon className="search__searchIcon" />
-        <input type="text" placeholder="Search Twitter" />
+        <input
+          onChange={(e) => handleSearchTerm(e)}
+          value={searchTerm}
+          type="text"
+          placeholder="Search Twitter"
+        />
       </form>
     </div>
   );
