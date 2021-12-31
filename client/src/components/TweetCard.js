@@ -1,12 +1,17 @@
-import React from "react";
-import "./Tweets.css";
+import React, { useEffect } from "react";
+import "./TweetCard.css";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import screenshot from "./screenshot.png";
 import { Avatar } from "@material-ui/core";
 import avatar from "./avatar.png";
 
-const Tweets = () => {
+const TweetCard = ({ tweets }) => {
+  //return tweets from tweets array and map through them
+  const displayTweets = tweets.map((tweet) => {
+    console.log(tweet);
+  });
+
   return (
     <div className="tweet">
       <div className="tweet__avatar">
@@ -20,7 +25,7 @@ const Tweets = () => {
               Elon Musk <span className="post__twitterHandle">@elonmusk</span>
             </h3>
             <div className="">
-              <p>This is a tweet</p>
+              <p></p>
             </div>
             <img src={screenshot} />
             <div className="tweet__footer">
@@ -34,4 +39,4 @@ const Tweets = () => {
   );
 };
 
-export default Tweets;
+export default TweetCard;

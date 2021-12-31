@@ -2,12 +2,13 @@ import React from "react";
 
 import "./Home.css";
 import "./Favourite.css";
-import Tweets from "./Tweets.js";
+
 import SportsHockey from "@mui/icons-material/SportsHockey";
 import SportsBasketball from "@mui/icons-material/SportsBasketball";
 import SportsFootball from "@mui/icons-material/SportsFootball";
 import SportsBaseball from "@mui/icons-material/SportsBaseball";
 import { brown, orange, green } from "@mui/material/colors";
+import TweetCard from "./TweetCard";
 
 const colorBrown = brown[500];
 const colorOrange = orange[800];
@@ -50,9 +51,9 @@ const Favourite = () => {
           </div>
         </div>
       </div>
-      <Tweets />
-      <Tweets />
-      <Tweets />
+      <TweetCard />
+      <TweetCard />
+      <TweetCard />
     </div>
   );
 };

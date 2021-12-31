@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
-import Tweets from "./Tweets";
+import TweetCard from "./TweetCard";
 import "./Home.css";
 
 const Home = () => {
@@ -9,9 +9,9 @@ const Home = () => {
       <div className="home__header">
         <Search />
       </div>
-      <Tweets />
-      <Tweets />
-      <Tweets />
+      <TweetCard />
+      <TweetCard />
+      <TweetCard />
     </div>
   );
 };

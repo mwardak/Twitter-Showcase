@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Search.css";
 import SearchIcon from "@mui/icons-material/Search";
+import TweetCard from "./TweetCard";
 
 const Search = () => {
   //use search term from the input field to search twitter
@@ -28,9 +29,10 @@ const Search = () => {
     setSearchTerm("");
   };
 
+  //pass tweets to the Tweets component
   // useEffect(() => {
-  //   console.log(searchTerm);
-  // }, [searchTerm]);
+  //   console.log(tweets);
+  // }, [tweets]);
 
   return (
     <div className="search">
@@ -43,6 +45,7 @@ const Search = () => {
           placeholder="Search Twitter"
         />
       </form>
+      <TweetCard tweets={tweets} isLoading={isLoading} />
     </div>
   );
 };
