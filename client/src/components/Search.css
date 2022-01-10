@@ -1,5 +1,6 @@
 .search {
   flex: 0.3;
+  width: 80px;
 }
 
 .search__input {

@@ -35,18 +35,24 @@ const Search = () => {
   // }, [tweets]);
 
   return (
-    <div className="search">
-      <form onSubmit={handleSubmit} className="search__input">
-        <SearchIcon className="search__searchIcon" />
-        <input
-          onChange={(e) => handleSearchTerm(e)}
-          value={searchTerm}
-          type="text"
-          placeholder="Search Twitter"
-        />
-      </form>
-      <TweetCard tweets={tweets} isLoading={isLoading} />
-    </div>
+    <>
+      <div className="home__header">
+        <div className="search">
+          <form onSubmit={handleSubmit} className="search__input">
+            <SearchIcon className="search__searchIcon" />
+            <input
+              onChange={(e) => handleSearchTerm(e)}
+              value={searchTerm}
+              type="text"
+              placeholder="Search Twitter"
+            />
+          </form>
+        </div>
+      </div>
+      <div>
+        <TweetCard tweets={tweets} />
+      </div>
+    </>
   );
 };
 

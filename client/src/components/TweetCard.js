@@ -7,36 +7,45 @@ import { Avatar } from "@material-ui/core";
 import avatar from "./avatar.png";
 
 const TweetCard = ({ tweets }) => {
-  //return tweets from tweets array and map through them
-  const displayTweets = tweets.map((tweet) => {
-    console.log(tweet);
-  });
+  const tweetCards = tweets?.data?.map((tweet) => {
+    // merge data and includes into an array
+    const tweetData = Object.assign({}, tweet.data, tweet.includes);
 
-  return (
-    <div className="tweet">
-      <div className="tweet__avatar">
-        <Avatar src={avatar} />
-      </div>
-      <div className="tweet__body">
-        <div className="tweet__header">
-          <div className="tweet__headerText">
-            <h3>
-              {" "}
-              Elon Musk <span className="post__twitterHandle">@elonmusk</span>
-            </h3>
-            <div className="">
-              <p></p>
+    console.log(tweetData);
+
+    return (
+      <div className="tweet" key={tweet.id}>
+        <div className="tweet__avatar">
+          <Avatar src={avatar} alt="avatar" />
+        </div>
+        <div className="tweet__body">
+          <div className="tweet__header">
+            <div className="tweet__headerText">
+              <h3>{tweet.user}</h3>
+
+              <p className="tweet__twitterHandle">@{}</p>
             </div>
-            <img src={screenshot} />
-            <div className="tweet__footer">
-              <ThumbUpIcon fontSize="small" />
-              <RepeatIcon fontSize="small" />
+            <div className="tweet__headerDescription"></div>
+          </div>
+          <div className="tweet__content">
+            <p>{tweet.text}</p>
+          </div>
+          <div className="tweet__footer">
+            <div className="tweet__footerIcons">
+              <p>{tweet.public_metrics.like_count}</p>
+              <ThumbUpIcon />
+            </div>
+            <div className="tweet__footerIcons">
+              <p>{tweet.public_metrics.retweet_count}</p>
+              <RepeatIcon />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  });
+
+  return <div>{tweetCards}</div>;
 };
 
 export default TweetCard;
