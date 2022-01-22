@@ -9,27 +9,10 @@ const App = () => {
   return (
     <div className="app">
       <Router>
+        <Sidebar />
         <Routes>
-          <Route
-            path="/"
-            component={Home}
-            element={
-              <>
-                <Sidebar />
-                <Home />
-              </>
-            }
-          />
-          <Route
-            path="/favourite"
-            component={Favourite}
-            element={
-              <>
-                <Sidebar />
-                <Favourite />
-              </>
-            }
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/favourite" element={<Favourite />} />
         </Routes>
       </Router>
     </div>

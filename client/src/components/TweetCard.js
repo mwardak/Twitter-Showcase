@@ -1,7 +1,7 @@
 import "./TweetCard.css";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import RepeatIcon from "@mui/icons-material/Repeat";
-import screenshot from "./screenshot.png";
+
 import { Avatar } from "@material-ui/core";
 import avatar from "./avatar.png";
 
@@ -20,11 +20,12 @@ const TweetCard = ({ tweets }) => {
     }
     const merged = mergeObjects(data, users);
     const tweetCards = merged.map((tweet) => {
+      console.log(tweet);
       return (
         <div className="tweet" key={tweet.id}>
           <div className="tweet__avatar">
             <Avatar
-              src={tweet.profile_image ? tweet.profile_image_url : avatar}
+              src={tweet.profile_image_url ? tweet.profile_image_url : avatar}
               alt="avatar"
             />
           </div>

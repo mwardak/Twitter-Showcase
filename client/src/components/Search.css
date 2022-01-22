@@ -1,6 +1,6 @@
 .search {
   flex: 0.3;
-  width: 80px;
+  width: 50px;
 }
 
 .search__input {
@@ -11,7 +11,7 @@
   border-radius: 20px;
   margin-top: 10px;
   margin-left: 20px;
-  width: 8cm;
+  width: 6.5cm;
 }
 
 .search__input > input {

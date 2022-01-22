@@ -24,7 +24,21 @@ app.get("/api/search/all", async (req, res) => {
 });
 
 app.get("/api/search/favourite", (req, res) => {
-  res.send("its working");
+  try {
+    const { id } = req.query;
+
+    const accessToken = process.env.ACCESS_TOKEN;
+
+    const url = `https://api.twitter.com/2/users/${id}/tweets?tweet.fields=public_metrics`;
+
+    const response = axios.get(url, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    res.send(response.data);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.use("/", express.static(path.join(__dirname, "client/build")));
