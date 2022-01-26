@@ -1,40 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TweetCardFavourite from "./TweetCardFavourite";
 import "./Home.css";
 import "./Favourite.css";
+import axios from "axios";
 
 import SportsHockey from "@mui/icons-material/SportsHockey";
 import SportsBasketball from "@mui/icons-material/SportsBasketball";
 import SportsFootball from "@mui/icons-material/SportsFootball";
 import SportsBaseball from "@mui/icons-material/SportsBaseball";
 import { brown, orange, green } from "@mui/material/colors";
-import TweetCard from "./TweetCard";
 
-//declare state variables for favourite tweets and their respectiv
+import { use } from "express/lib/application";
 
 const Favourite = () => {
   const [favouriteTweets, setFavouriteTweets] = useState([]);
 
-  //handle click event for each favourite sport
-  const handleClick = async (e) => {
+  const handleClick = async (e, id) => {
     e.preventDefault();
 
-    const favouriteSports = [
-      { id: 5004938, name: "NHL" },
-      { id: 19923144, name: "NBA" },
-      { id: 19426551, name: "NFL" },
-      { id: 18479513, name: "MLB" },
-    ];
+    // const favouriteSports = [
+    //   { id: 50004938, name: "NHL" },
+    //   { id: 19923144, name: "NBA" },
+    //   { id: 19426551, name: "NFL" },
+    //   { id: 18479513, name: "MLB" },
+    // ];
 
-    favouriteSports.forEach((sport) => {
-      const searchResponse = await axios.get(
-        `/api/search/favourite=${sport.id}`
-      );
-
-      //add each favourite sport to the favouriteTweets array
-      setFavouriteTweets(searchResponse.data);
-    });
+    const searchResponse = await axios.get(`/api/search/favourite?id=${id}`);
+    console.log(searchResponse.data);
+    setFavouriteTweets(searchResponse.data);
   };
+
+  // useEffect(() => {
+  //   handleClick(null);
+  // }, []);
 
   const colorBrown = brown[500];
   const colorOrange = orange[800];
@@ -52,9 +50,9 @@ const Favourite = () => {
         <div className="favourite">
           <div className="favourite__card">
             <SportsHockey style={iconStyle} color="primary" />
-            /** create an onclick for all buttons */
+
             <button
-              onclick={(e) => handleClick(e)}
+              onClick={(e) => handleClick(e, 50004938)}
               className="favourite__button"
               type="button"
               name="@NHL"

@@ -8,45 +8,44 @@ import avatar from "./avatar.png";
 
 const TweetCard = ({ favouriteTweets }) => {
   //create a state to store the favourite tweets
+  // console.log(favouriteTweets);
+  // const tweetCards = favouriteTweets.map((tweet) => {
+  return (
+    <div className="tweet">
+      <div className="tweet__avatar">
+        <Avatar
+          // src={}
+          alt="avatar"
+        />
+      </div>
+      <div className="tweet__body">
+        <div className="tweet__header">
+          <div className="tweet__headerText">
+            <h3>tweet.user</h3>
 
-  const tweetCards = favouriteTweets.map((tweet) => {
-    console.log(tweet);
-    return (
-      <div className="tweet" key={tweet.id}>
-        <div className="tweet__avatar">
-          <Avatar
-            src={tweet.profile_image_url ? tweet.profile_image_url : avatar}
-            alt="avatar"
-          />
+            <p className="tweet__twitterHandle">@</p>
+          </div>
+          <div className="tweet__headerDescription"></div>
         </div>
-        <div className="tweet__body">
-          <div className="tweet__header">
-            <div className="tweet__headerText">
-              <h3>{tweet.user}</h3>
-
-              <p className="tweet__twitterHandle">@{tweet.username}</p>
-            </div>
-            <div className="tweet__headerDescription"></div>
+        <div className="tweet__content">
+          <p>{}</p>
+        </div>
+        <div className="tweet__footer">
+          <div className="tweet__footerIcons">
+            <p>{}</p>
+            <ThumbUpIcon />
           </div>
-          <div className="tweet__content">
-            <p>{tweet.text}</p>
-          </div>
-          <div className="tweet__footer">
-            <div className="tweet__footerIcons">
-              <p>{tweet.public_metrics.like_count}</p>
-              <ThumbUpIcon />
-            </div>
-            <div className="tweet__footerIcons">
-              <p>{tweet.public_metrics.retweet_count}</p>
-              <RepeatIcon />
-            </div>
+          <div className="tweet__footerIcons">
+            <p>{}</p>
+            <RepeatIcon />
           </div>
         </div>
       </div>
-    );
-  });
+    </div>
+  );
+  // });
 
-  return <div>{tweetCards}</div>;
+  // return <div>{tweetCards}</div>;
 };
 
 export default TweetCard;

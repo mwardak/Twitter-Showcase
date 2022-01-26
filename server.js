@@ -23,9 +23,10 @@ app.get("/api/search/all", async (req, res) => {
   }
 });
 
-app.get("/api/search/favourite", (req, res) => {
+app.get("/api/search/favourite", async (req, res) => {
   try {
     const { id } = req.query;
+    console.log(id);
 
     const accessToken = process.env.ACCESS_TOKEN;
 
@@ -34,6 +35,7 @@ app.get("/api/search/favourite", (req, res) => {
     const response = axios.get(url, {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
+    console.log(response.data);
 
     res.send(response.data);
   } catch (error) {
@@ -43,4 +45,9 @@ app.get("/api/search/favourite", (req, res) => {
 
 app.use("/", express.static(path.join(__dirname, "client/build")));
 const port = process.env.PORT || 3000;
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 app.listen(port, () => console.log(`server listening on port ${port}`));
+// catch all route
