@@ -26,13 +26,13 @@ app.get("/api/search/all", async (req, res) => {
 app.get("/api/search/favourite", async (req, res) => {
   try {
     const { id } = req.query;
-    console.log(id);
+    // console.log(id);
 
     const accessToken = process.env.ACCESS_TOKEN;
 
     const url = `https://api.twitter.com/2/users/${id}/tweets?tweet.fields=public_metrics`;
-
-    const response = axios.get(url, {
+    console.log(url);
+    const response = await axios.get(url, {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
     console.log(response.data);

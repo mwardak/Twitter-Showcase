@@ -26,13 +26,13 @@ const Favourite = () => {
     // ];
 
     const searchResponse = await axios.get(`/api/search/favourite?id=${id}`);
-    console.log(searchResponse.data);
+
     setFavouriteTweets(searchResponse.data);
   };
 
   // useEffect(() => {
-  //   handleClick(null);
-  // }, []);
+  //   console.log(favouriteTweets);
+  // }, [favouriteTweets]);
 
   const colorBrown = brown[500];
   const colorOrange = orange[800];
@@ -62,25 +62,40 @@ const Favourite = () => {
           </div>
           <div className="favourite__card">
             <SportsBasketball style={iconStyle} sx={{ color: colorOrange }} />
-            <button className="favourite__button" type="button" name="@NBA">
+            <button
+              onClick={(e) => handleClick(e, 19923144)}
+              className="favourite__button"
+              type="button"
+              name="@NBA"
+            >
               @NBA
             </button>
           </div>
           <div className="favourite__card">
             <SportsBaseball style={iconStyle} sx={{ color: colorGreen }} />
-            <button className="favourite__button" type="button" name="@MLB">
+            <button
+              onClick={(e) => handleClick(e, 18479513)}
+              className="favourite__button"
+              type="button"
+              name="@MLB"
+            >
               @MLB
             </button>
           </div>
           <div className="favourite__card">
             <SportsFootball style={iconStyle} sx={{ color: colorBrown }} />
-            <button className="favourite__button" type="button" name="@NFL">
+            <button
+              onClick={(e) => handleClick(e, 19426551)}
+              className="favourite__button"
+              type="button"
+              name="@NFL"
+            >
               @NFL
             </button>
           </div>
         </div>
       </div>
-      <TweetCardFavourite tweets={favouriteTweets} />
+      <TweetCardFavourite favouriteTweets={favouriteTweets} />
     </div>
   );
 };
