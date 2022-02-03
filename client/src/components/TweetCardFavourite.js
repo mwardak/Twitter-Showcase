@@ -7,12 +7,10 @@ import { Avatar } from "@material-ui/core";
 import avatar from "./avatar.png";
 
 const TweetCard = ({ favouriteTweets }) => {
-  //create a state to store the favourite tweets
-
+  console.log({ favouriteTweets });
   const tweetCards = favouriteTweets?.data?.map((tweet) => {
-    console.log(tweet);
     return (
-      <div className="tweet">
+      <div className="tweet" key={tweet.id}>
         <div className="tweet__avatar">
           <Avatar
             src={tweet.profile_image_url ? tweet.profile_image_url : avatar}
@@ -21,20 +19,10 @@ const TweetCard = ({ favouriteTweets }) => {
         </div>
         <div className="tweet__body">
           <div className="tweet__header">
-            < div className="tweet__headerText">
-              <h3>{tweet.user}</h3>
-              /* write conditional rendering for id*/
-              {tweet.id === 50004938 ? (
-                <h4>@NHL</h4>}
-              {tweet.id === 19923144 ? (
-                <h4>@NBA</h4> }
-              {tweet.id === 19426551 ? (
-                <h4>@NFL</h4> }
-              {tweet.id === 18479513 ? (
-                <h4>@MLB</h4> }
+            <div className="tweet__headerText">
+              <h3>{tweet.name}</h3>
 
-
-              <p className="tweet__twitterHandle">@{tweet.id}</p>
+              <p className="tweet__twitterHandle">{tweet.author.name}</p>
             </div>
             <div className="tweet__headerDescription"></div>
           </div>

@@ -18,13 +18,6 @@ const Favourite = () => {
   const handleClick = async (e, id) => {
     e.preventDefault();
 
-    // const favouriteSports = [
-    //   { id: 50004938, name: "NHL" },
-    //   { id: 19923144, name: "NBA" },
-    //   { id: 19426551, name: "NFL" },
-    //   { id: 18479513, name: "MLB" },
-    // ];
-
     const searchResponse = await axios.get(`/api/search/favourite?id=${id}`);
 
     setFavouriteTweets(searchResponse.data);
