@@ -10,7 +10,6 @@ import SportsFootball from "@mui/icons-material/SportsFootball";
 import SportsBaseball from "@mui/icons-material/SportsBaseball";
 import { brown, orange, green } from "@mui/material/colors";
 
-import { use } from "express/lib/application";
 
 const Favourite = () => {
   const [favouriteTweets, setFavouriteTweets] = useState([]);
@@ -36,6 +35,8 @@ const Favourite = () => {
     margin: "0px",
     padding: "0px",
   };
+
+  console.log(favouriteTweets);
 
   return (
     <div className="home">

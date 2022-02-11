@@ -18,6 +18,8 @@ app.get("/api/search/all", async (req, res) => {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
 
+    //make api call to twitter without the bearer token
+
     res.json(response.data);
   } catch (error) {
     console.log(error);

@@ -6,9 +6,8 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import { Avatar } from "@material-ui/core";
 import avatar from "./avatar.png";
 
-const TweetCard = ({ favouriteTweets }) => {
-  console.log({ favouriteTweets });
-  const tweetCards = favouriteTweets?.data?.map((tweet) => {
+const TweetCardFavourite = ({ favouriteTweets }) => {
+  return favouriteTweets.map((tweet) => {
     return (
       <div className="tweet" key={tweet.id}>
         <div className="tweet__avatar">
@@ -43,8 +42,6 @@ const TweetCard = ({ favouriteTweets }) => {
       </div>
     );
   });
-
-  return <div>{tweetCards}</div>;
 };
 
-export default TweetCard;
+export default TweetCardFavourite;
